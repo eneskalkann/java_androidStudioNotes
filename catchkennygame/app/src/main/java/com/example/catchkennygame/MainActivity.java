@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-// importlama kısmı
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     ImageView[] imageArray;
     Handler handler;
     Runnable runnable;
-    // importladığımız textleri, imageları burada tanımlıyoruz
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +51,8 @@ public class MainActivity extends AppCompatActivity {
         imageView6 = findViewById(R.id.imageVie6);
         imageView7 = findViewById(R.id.imageView7);
         imageView8 = findViewById(R.id.imageView8);
-        // id'leri ile tanımladık metodda kullanabiliriz artık
         imageArray = new ImageView[] {imageView,imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7,imageView8};
-        // dizi oluşturduk.
         hideImages();
-        // geriye doğru gitme , sayaç oluşturma .
         new CountDownTimer(10000 , 1000){
             public void onTick(long millisUntilFinished){
                 timeText.setText("Time : " + millisUntilFinished/1000);
@@ -68,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 for (ImageView image : imageArray) {
                     image.setVisibility(View.INVISIBLE);
                 }
-                // alert verme kısmı
                 AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
                 //MainActivity.this ile MainActivity'e ulaşmak istediğimizi söyledik.
                 alert.setTitle("Restart?");
@@ -94,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         }.start();
         // start geri sayımı çalıştır/başlat
      }
-    // skor tutmak için score kısmını yukarda tanımladık
     public void increaseScore (View view) {
         score++;
         scoreText.setText("Score : " + score);

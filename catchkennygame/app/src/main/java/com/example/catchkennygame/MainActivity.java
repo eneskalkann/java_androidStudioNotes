@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         }.start();
         // start geri sayımı çalıştır/başlat
      }
-
+    // skor tutmak için score kısmını yukarda tanımladık
     public void increaseScore (View view) {
         score++;
         scoreText.setText("Score : " + score);
